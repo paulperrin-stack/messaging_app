@@ -12,7 +12,7 @@ export default function ConversationPage({ userId }) {
         getConversation(userId).then(setMessages).catch(console.error);
 
     useEffect(() => { load(); }, [userId]);
-    useEffect(() => { bottomRef.current?.scrollIntoView({ behavoir: 'smooth' });
+    useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages]);
 
     const handleSend = async (e) => {
@@ -26,12 +26,12 @@ export default function ConversationPage({ userId }) {
     return (
         <div>
             <div style={{ height: '400px', overflowY: 'auto '}}>
-                {messages.map(m => {
+                {messages.map(m => (
                     <p key={m.id} style={{ textAlign: m.senderId === user.id ? 'right' : 'left' }}>
                         <strong>{m.sender.displayName || m.sender.username}:</strong>
                         {m.content}
                     </p>
-                })}
+                ))}
                 <div ref={bottomRef} />
             </div>
             <form onSubmit={handleSend}>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAtuh } from '../hooks/useAuth.jsx';
+import { useAuth } from '../hooks/useAuth.jsx';
 import { register } from '../api/auth.js';
 
 export default function LoginPage() {
@@ -24,7 +24,7 @@ export default function LoginPage() {
         <div>
             <h1>{mode === 'login' ? 'Sign In' : 'Create Account'}</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
-            <form onSumit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <input value={username} onChange={e => setUsername(e.target.value)} placeholder='Username' />
                 <input type='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='Password' />
                 <button type='submit'>{mode === 'login' ? 'Sign in' : 'Register'}</button>

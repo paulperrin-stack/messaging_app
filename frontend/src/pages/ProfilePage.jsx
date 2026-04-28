@@ -11,7 +11,7 @@ export default function ProfilePage() {
         getUser(user.id).then(data => setForm({
             displayName:    data.displayName    ||  '',
             bio:            data.bio            ||  '',
-            avaterUrl:      data.avatarUrl      ||  ''
+            avatarUrl:      data.avatarUrl      ||  ''
         }));
     }, [user.id]);
 
@@ -27,7 +27,7 @@ export default function ProfilePage() {
             <h2>My Profile</h2>
             {saved && <p>Saved!</p>}
             <form onSubmit={handleSave}>
-                <input value={form.displayName} onChange={e => setForm({...form, dsiplayName: e.target.value})} placeholder='Display name' />
+                <input value={form.displayName} onChange={e => setForm({...form, displayName: e.target.value})} placeholder='Display name' />
                 <textarea value={form.bio} onChange={e => setForm({...form, bio: e.target.value})} placeholder='Bio' />
                 <input value={form.avatarUrl} onChange={e => setForm({...form, avatarUrl: e.target.value})} placeholder='Avatar URL' />
                 <button type='submit'>Save changes</button>

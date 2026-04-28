@@ -15,12 +15,12 @@ export default function UsersPage({ onOpenChat }) {
             <button onClick={logout}>Log out</button>
             <h2>Users</h2>
             <ul>
-                {users.filter(u => u.id !== user.id).map(u => {
+                {users.filter(u => u.id !== user.id).map(u => (
                     <li key={u.id}>
-                        {u.displayName || u.username}
+                        {u.displayName || u.username}
                         <button onClick={() => onOpenChat(u.id)}>Message</button>
                     </li>
-                })}
+                ))}
             </ul>
         </div>
     );

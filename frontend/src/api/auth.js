@@ -6,7 +6,7 @@ export const register = (username, password) =>
         body: JSON.stringify({ username, password })
     });
 
-export const login = (username, password) => {
+export const login = async (username, password) => {
     const data = await apiFetch('/auth/login', {
         method: 'POST',
         body: JSON.stringify({ username, password })

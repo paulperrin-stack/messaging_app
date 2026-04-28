@@ -12,7 +12,7 @@ export const getAllUsers = async (req, res) => {
 
 export const getUserById = async (req, res) => {
     const user = await prisma.user.findUnique({
-        where: { id: Number(req.prisma.id) },
+        where: { id: Number(req.params.id) },
         select: PUBLIC_FIELDS
     });
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -24,7 +24,7 @@ export const updateUser = async (req, res) => {
         return res.status(403).json({ message: 'Forbidden' });
 
     const { displayName, bio, avatarUrl } = req.body;
-    const udpated = await prisma.user.update({
+    const updated = await prisma.user.update({
         where: { id: req.user.id },
         data: { displayName, bio, avatarUrl },
         select: PUBLIC_FIELDS
