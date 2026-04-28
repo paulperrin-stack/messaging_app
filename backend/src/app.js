@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(passport.initialize());
 
 app.use('/api/auth', authRouter);
-app.use('/api/users', userRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/messages', messagesRouter);
 
 const PORT = process.env.PORT || 3000;

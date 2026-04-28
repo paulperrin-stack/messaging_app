@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import passport from '../middleware/auth.js';
-import { getAllUsers, getUserById, updateUser } from '../controllers/usersController';
+import { getAllUsers, getUserById, updateUser } from '../controllers/usersController.js';
 
 const router = Router();
 const protect = passport.authenticate('jwt', { session: false });

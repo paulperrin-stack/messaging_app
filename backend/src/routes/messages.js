@@ -1,12 +1,11 @@
 import { Router } from 'express';
 import passport from '../middleware/auth.js';
-import { register, login } from '../controllers/authController.js';
+import { getConversation, sendMessage } from '../controllers/messageController.js';
 
 const router = Router();
-
-router.post('/register', register);
-router.post('/login', login);
-
 const protect = passport.authenticate('jwt', { session: false });
+
+router.get('/:userId', protect, getConversation);
+router.post('/:userId', protect, sendMessage);
 
 export default router;

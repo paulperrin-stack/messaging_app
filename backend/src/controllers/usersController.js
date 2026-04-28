@@ -30,4 +30,4 @@ export const updateUser = async (req, res) => {
         select: PUBLIC_FIELDS
     });
     res.json(updated);
-}
+};
