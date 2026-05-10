@@ -7,6 +7,4 @@ const router = Router();
 router.post('/register', register);
 router.post('/login', login);
 
-const protect = passport.authenticate('jwt', { session: false });
-
 export default router;
