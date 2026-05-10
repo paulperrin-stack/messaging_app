@@ -4,7 +4,7 @@ REST API for direct messaging between users. Built as a Node.js project for The 
 
 ## Screenshots
 
-![BACKEND](docs/screenshot-postman.png)
+[BACKEND](docs/screenshot-postman.png)
 
 ## Stack
 
@@ -13,8 +13,8 @@ REST API for direct messaging between users. Built as a Node.js project for The 
 
 ## Structure
 
-messaging-app/
-├── backend/    # Express REST API
+messaging-app/\
+├── backend/    # Express REST API\
 └── frontend/   # React client
 
 ## API Endpoints
