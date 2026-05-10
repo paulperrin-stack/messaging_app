@@ -2,6 +2,10 @@
 
 REST API for direct messaging between users. Built as a Node.js project for The Odin Project.
 
+## Screenshots
+
+![BACKEND](docs/screenshot-postman.png)
+
 ## Stack
 
 **Backend:** Node.js · Express 5 · Prisma · PostgreSQL · JWT · Passport.js · bcrypt  
